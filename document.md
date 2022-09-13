@@ -116,3 +116,6 @@ publishが成功すると、GitHubのPackagesの中に表示されるように�
 
 ### 共通メッセージのインストール
 
+以下のコマンドで共通メッセージをインストールします。
+
+    $ npm install react-i18n-common

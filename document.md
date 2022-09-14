@@ -281,3 +281,4 @@ i18n.jsと同じ場所に、固有メッセージを定義したen.jsonとja.jso
 
 [react-i18n-sample(本ドキュメント)](https://github.com/ruimo/react-i18n-sample)
 
+---

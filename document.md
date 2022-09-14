@@ -4,13 +4,15 @@
 
 ## 概要
 
-![Abstract](figures/abstract.drawio.svg)
-
-図1 概要
-
 * 複数の画面で共通で使用するメッセージはnpm packageにして再利用できるようにする。
 * 利用者側は、共通のメッセージと固有のメッセージの両方を利用できる。
 * 共通のメッセージは複数用意することが可能(名前空間で使い分ける)。
+
+---
+
+![Abstract](figures/abstract.drawio.svg)
+
+図1 概要
 
 ---
 
@@ -41,7 +43,7 @@ npmのインストールについては解説を省略します。
     $ cd react-i18n-common
     $ npm init
 
-質問に答えていくとpackage.jsonが作成されます。なおGitHub npm package registryを使用する場合は、package.jsonのパッケージに、以下のように[user]のところにGitHubのユーザ名を指定してください。これを忘れるとこの後のnpm publishに失敗しますので注意してください。
+質問に答えていくとpackage.jsonが作成されます。なおGitHub npm package registryを使用する場合は、package.jsonのパッケージ名を、以下のようにしてください。[user]のところにGitHubのユーザ名を指定してください。これを忘れるとこの後のnpm publishに失敗しますので注意してください。
 
       "name": "@[user]>/react-i18n-common",
 
@@ -74,7 +76,7 @@ npmのインストールについては解説を省略します。
 
 ### アクセス・トークンの設定
 
-[個人アクセストークンの作成](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)を参照してアクセストークンを作成します。scopeにはrepoとwrite:packageを指定します。
+今回はGitHubを使うので、[「個人アクセストークンの作成」](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)を参照してアクセストークンを作成します。scopeにはrepoとwrite:packageを指定します。
 
 ---
 
@@ -114,13 +116,13 @@ publishが成功すると、GitHubのPackagesの中に表示されるように�
 
 ### .npmrcの設定
 
-共通メッセージ・パッケージの作成の時に用意した利用者側にコピーします。
+共通メッセージ・パッケージの作成の時に用意した.npmrcを利用者側にコピーします。
 
 ---
 
 ### 共通メッセージのインストール
 
-以下のコマンドで作成しておいた共通メッセージをインストールします。ここでXXの部分はGitHubのユーザ名ですが、npm installで指定するパッケージ名は、使用するnpm package registryによって違うので、お使いのものに合わせてください。
+以下のコマンドで作成しておいた共通メッセージをインストールします。ここでXXXの部分はGitHubのユーザ名です(npm installで指定するパッケージ名は、使用するnpm package registryによって違うので、お使いのものに合わせてください)。
 
     $ npm install react-i18next i18next
     $ npm install @XXX/react-i18n-common@1.0.0
@@ -206,6 +208,10 @@ index.jsがある場所にi18n.jsを作ります。XXXのところはGitHubの�
 
 ---
 
+アプリケーションを起動して動作を確認してください。
+
+---
+
 ## アプリケーション固有メッセージを使用する
 
 共通のメッセージ以外に、アプリケーション固有メッセージを定義し、共通メッセージと使い分ける方法を見ていきます。
@@ -260,4 +266,9 @@ i18n.jsと同じ場所に、固有メッセージを定義したen.jsonとja.jso
       <div>{t('HelloWorld')}</div>
       <div>{t('Name', { ns: 'app'})}</div> // 固有メッセージは名前空間を指定
 ---
+
+動作を確認してください。
+
+<img src='figures/run.png' width=480>
+
 

@@ -271,4 +271,13 @@ i18n.jsと同じ場所に、固有メッセージを定義したen.jsonとja.jso
 
 <img src='figures/run.png' width=480>
 
+---
+
+## 参考
+
+[react-i18n-common(共通メッセージのソース)](https://github.com/ruimo/react-i18n-common)
+
+[react-i18n-app(利用者側アプリケーションのソース)](https://github.com/ruimo/react-i18n-app)
+
+[react-i18n-sample(本ドキュメント)](https://github.com/ruimo/react-i18n-sample)
 
